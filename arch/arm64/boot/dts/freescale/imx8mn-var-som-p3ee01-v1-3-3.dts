@@ -137,17 +137,17 @@
 		>;
 	};
 
-	pinctrl_pca9534: pca9534grp {
-		fsl,pins = <
-			MX8MN_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x16
-		>;
-	};
+	//pinctrl_pca9534: pca9534grp {
+	//	fsl,pins = <
+	//		MX8MN_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x16
+	//	>;
+	//};
 
-	pinctrl_pwm1: pwm1grp {
-		fsl,pins = <
-			MX8MN_IOMUXC_SPDIF_EXT_CLK_PWM1_OUT		0x06
-		>;
-	};
+	//pinctrl_pwm1: pwm1grp {
+	//	fsl,pins = <
+	//		MX8MN_IOMUXC_SPDIF_EXT_CLK_PWM1_OUT		0x06
+	//	>;
+	//};
 
 	pinctrl_uart1: uart1grp {
 		fsl,pins = <
@@ -266,46 +266,46 @@
 	};
 
 	/* GPIO expander */
-	pca9534: gpio@20 {
-		status = "okay";
-		compatible = "nxp,pca9534";
-		reg = <0x20>;
-		gpio-controller;
-		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_pca9534>;
-		interrupt-parent = <&gpio1>;
-		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
-		#gpio-cells = <2>;
-		wakeup-source;
+	//pca9534: gpio@20 {
+	//	status = "okay";
+	//	compatible = "nxp,pca9534";
+	//	reg = <0x20>;
+	//	gpio-controller;
+	//	pinctrl-names = "default";
+	//	pinctrl-0 = <&pinctrl_pca9534>;
+	//	interrupt-parent = <&gpio1>;
+	//	interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
+	//	#gpio-cells = <2>;
+	//	wakeup-source;
 
-		usb3_sel_hog {
-			gpio-hog;
-			gpios = <4 GPIO_ACTIVE_HIGH>;
-			output-low;
-			line-name = "usb3_sel";
-		};
+	//	usb3_sel_hog {
+	//		gpio-hog;
+	//		gpios = <4 GPIO_ACTIVE_HIGH>;
+	//		output-low;
+	//		line-name = "usb3_sel";
+	//	};
 
-		enet_rst_hog {
-			gpio-hog;
-			gpios = <5 GPIO_ACTIVE_HIGH>;
-			output-low;
-			line-name = "enet_rst";
-		};
+	//	enet_rst_hog {
+	//		gpio-hog;
+	//		gpios = <5 GPIO_ACTIVE_HIGH>;
+	//		output-low;
+	//		line-name = "enet_rst";
+	//	};
 
-		som_vsel_hog {
-			gpio-hog;
-			gpios = <6 GPIO_ACTIVE_HIGH>;
-			output-low;
-			line-name = "som_vsel";
-		};
+	//	som_vsel_hog {
+	//		gpio-hog;
+	//		gpios = <6 GPIO_ACTIVE_HIGH>;
+	//		output-low;
+	//		line-name = "som_vsel";
+	//	};
 
-		enet_sel_hog {
-			gpio-hog;
-			gpios = <7 GPIO_ACTIVE_HIGH>;
-			output-low;
-			line-name = "enet_sel";
-		};
-	};
+	//	enet_sel_hog {
+	//		gpio-hog;
+	//		gpios = <7 GPIO_ACTIVE_HIGH>;
+	//		output-low;
+	//		line-name = "enet_sel";
+	//	};
+	//};
 };
 
 &i2c3 {
@@ -360,11 +360,11 @@
 	};
 };
 
-&pwm1 {
-	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_pwm1>;
-};
+//&pwm1 {
+//	status = "okay";
+//	pinctrl-names = "default";
+//	pinctrl-0 = <&pinctrl_pwm1>;
+//};
 
 &snvs_pwrkey {
 	status = "okay";
