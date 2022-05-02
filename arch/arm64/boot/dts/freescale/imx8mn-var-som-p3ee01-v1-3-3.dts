@@ -102,12 +102,12 @@
 		>;
 	};
 
-	pinctrl_csi1: csi1grp {
-		fsl,pins = <
-			MX8MN_IOMUXC_GPIO1_IO13_GPIO1_IO13		0x19
-			MX8MN_IOMUXC_ECSPI2_MISO_GPIO5_IO12		0x19
-		>;
-	};
+	//pinctrl_csi1: csi1grp {
+	//	fsl,pins = <
+	//		MX8MN_IOMUXC_GPIO1_IO13_GPIO1_IO13		0x19
+	//		MX8MN_IOMUXC_ECSPI2_MISO_GPIO5_IO12		0x19
+	//	>;
+	//};
 
 	pinctrl_i2c2: i2c2grp {
 		fsl,pins = <
@@ -234,36 +234,36 @@
 	sda-gpios = <&gpio5 17 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 
-	ov5640_mipi1: ov5640_mipi1@3c {
-		status = "okay";
-		compatible = "ovti,ov5640";
-		reg = <0x3c>;
-		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_csi1>;
-		clocks = <&clk IMX8MN_CLK_CLKO1>;
-		clock-names = "xclk";
-/* Disabled CLKO1, since VAR-SOM-MX8M-NANO camera expansion board uses
- * its own oscillator. Enable CLK01 if your design requires it
- */
-#if 0
-		assigned-clocks = <&clk IMX8MN_CLK_CLKO1>;
-		assigned-clock-parents = <&clk IMX8MN_CLK_24M>;
-#endif
-		assigned-clock-rates = <24000000>;
-		csi_id = <0>;
-		powerdown-gpios = <&gpio5 12 GPIO_ACTIVE_HIGH>;
-		reset-gpios = <&gpio1 13 GPIO_ACTIVE_LOW>;
-		mclk = <24000000>;
-		mclk_source = <0>;
-		mipi_csi;
-		port {
-			ov5640_ep: endpoint {
-				remote-endpoint = <&mipi1_sensor_ep>;
-				data-lanes = <1 2>;
-				clocks-lanes = <0>;
-			};
-		};
-	};
+	//ov5640_mipi1: ov5640_mipi1@3c {
+	//	status = "okay";
+	//	compatible = "ovti,ov5640";
+	//	reg = <0x3c>;
+	//	pinctrl-names = "default";
+	//	pinctrl-0 = <&pinctrl_csi1>;
+	//	clocks = <&clk IMX8MN_CLK_CLKO1>;
+	//	clock-names = "xclk";
+/*// Disabled CLKO1, since VAR-SOM-MX8M-NANO camera expansion board uses
+ *// its own oscillator. Enable CLK01 if your design requires it
+ *///
+#i//f 0
+	//	assigned-clocks = <&clk IMX8MN_CLK_CLKO1>;
+	//	assigned-clock-parents = <&clk IMX8MN_CLK_24M>;
+#e//ndif
+	//	assigned-clock-rates = <24000000>;
+	//	csi_id = <0>;
+	//	powerdown-gpios = <&gpio5 12 GPIO_ACTIVE_HIGH>;
+	//	reset-gpios = <&gpio1 13 GPIO_ACTIVE_LOW>;
+	//	mclk = <24000000>;
+	//	mclk_source = <0>;
+	//	mipi_csi;
+	//	port {
+	//		ov5640_ep: endpoint {
+	//			remote-endpoint = <&mipi1_sensor_ep>;
+	//			data-lanes = <1 2>;
+	//			clocks-lanes = <0>;
+	//		};
+	//	};
+	//};
 
 	/* GPIO expander */
 	//pca9534: gpio@20 {
@@ -343,22 +343,22 @@
 	status = "okay";
 };
 
-&mipi_csi_1 {
-	#address-cells = <1>;
-	#size-cells = <0>;
-	status = "okay";
-
-	port@0 {
-		reg = <0>;
-		mipi1_sensor_ep: endpoint {
-			remote-endpoint = <&ov5640_ep>;
-			data-lanes = <2>;
-			csis-hs-settle = <13>;
-			csis-clk-settle = <2>;
-			csis-wclk;
-		};
-	};
-};
+//&mipi_csi_1 {
+//	#address-cells = <1>;
+//	#size-cells = <0>;
+//	status = "okay";
+//
+//	port@0 {
+//		reg = <0>;
+//		mipi1_sensor_ep: endpoint {
+//			remote-endpoint = <&ov5640_ep>;
+//			data-lanes = <2>;
+//			csis-hs-settle = <13>;
+//			csis-clk-settle = <2>;
+//			csis-wclk;
+//		};
+//	};
+//};
 
 //&pwm1 {
 //	status = "okay";
