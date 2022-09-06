@@ -72,23 +72,23 @@
 	//	};
 	//};
 
-	pcie0_refclk: pcie0-refclk {
-		compatible = "fixed-clock";
-		#clock-cells = <0>;
-		clock-frequency = <100000000>;
-	};
+	//pcie0_refclk: pcie0-refclk {
+	//	compatible = "fixed-clock";
+	//	#clock-cells = <0>;
+	//	clock-frequency = <100000000>;
+	//};
 
-	reg_usb_otg2_vbus: regulator-usb-otg2-vbus {
-		compatible = "regulator-fixed";
-		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&pinctrl_usbotg2>;
-		pinctrl-1 = <&pinctrl_usbotg2_sleep>;
-		regulator-name = "usb_otg2_vbus";
-		regulator-min-microvolt = <5000000>;
-		regulator-max-microvolt = <5000000>;
-		gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
-		enable-active-high;
-	};
+	//reg_usb_otg2_vbus: regulator-usb-otg2-vbus {
+	//	compatible = "regulator-fixed";
+	//	pinctrl-names = "default", "sleep";
+	//	pinctrl-0 = <&pinctrl_usbotg2>;
+	//	pinctrl-1 = <&pinctrl_usbotg2_sleep>;
+	//	regulator-name = "usb_otg2_vbus";
+	//	regulator-min-microvolt = <5000000>;
+	//	regulator-max-microvolt = <5000000>;
+	//	gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+	//	enable-active-high;
+	//};
 
 	//reg_usdhc2_vmmc: regulator-usdhc2 {
 	//	compatible = "regulator-fixed";
@@ -179,11 +179,11 @@
 	//	>;
 	//};
 
-	pinctrl_pcie0: pcie0grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21		0x41
-		>;
-	};
+	//pinctrl_pcie0: pcie0grp {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21		0x41
+	//	>;
+	//};
 
 	//pinctrl_pwm1: pwm1grp {
 	//	fsl,pins = <
@@ -224,17 +224,17 @@
 	//	>;
 	//};
 
-	pinctrl_usbotg2: usbotg2grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x16
-		>;
-	};
+	//pinctrl_usbotg2: usbotg2grp {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x16
+	//	>;
+	//};
 
-	pinctrl_usbotg2_sleep: usbotg2grpsleep {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x120
-		>;
-	};
+	//pinctrl_usbotg2_sleep: usbotg2grpsleep {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x120
+	//	>;
+	//};
 
 
 	//pinctrl_usdhc2: usdhc2grp {
@@ -413,18 +413,18 @@
 //	};
 //};
 
-&pcie0{
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_pcie0>;
-	reset-gpio = <&gpio4 21 GPIO_ACTIVE_LOW>;
-	clocks = <&clk IMX8MM_CLK_PCIE1_ROOT>,
-		 <&clk IMX8MM_CLK_PCIE1_AUX>,
-		 <&clk IMX8MM_CLK_PCIE1_PHY>,
-		 <&pcie0_refclk>;
-	clock-names = "pcie", "pcie_aux", "pcie_phy", "pcie_bus";
-	ext_osc = <1>;
-	status = "okay";
-};
+//&pcie0{
+//	pinctrl-names = "default";
+//	pinctrl-0 = <&pinctrl_pcie0>;
+//	reset-gpio = <&gpio4 21 GPIO_ACTIVE_LOW>;
+//	clocks = <&clk IMX8MM_CLK_PCIE1_ROOT>,
+//		 <&clk IMX8MM_CLK_PCIE1_AUX>,
+//		 <&clk IMX8MM_CLK_PCIE1_PHY>,
+//		 <&pcie0_refclk>;
+//	clock-names = "pcie", "pcie_aux", "pcie_phy", "pcie_bus";
+//	ext_osc = <1>;
+//	status = "okay";
+//};
 
 //&pwm1 {
 //	status = "okay";
@@ -472,14 +472,14 @@
 	status = "okay";
 };
 
-&usbotg2 {
-	dr_mode = "host";
-	vbus-supply = <&reg_usb_otg2_vbus>;
-	picophy,pre-emp-curr-control = <3>;
-	picophy,dc-vol-level-adjust = <7>;
-	disable-over-current;
-	status = "okay";
-};
+//&usbotg2 {
+//	dr_mode = "host";
+//	vbus-supply = <&reg_usb_otg2_vbus>;
+//	picophy,pre-emp-curr-control = <3>;
+//	picophy,dc-vol-level-adjust = <7>;
+//	disable-over-current;
+//	status = "okay";
+//};
 
 /* SD */
 //&usdhc2 {
