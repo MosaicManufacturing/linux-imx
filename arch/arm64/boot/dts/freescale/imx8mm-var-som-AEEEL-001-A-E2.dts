@@ -49,20 +49,6 @@
 		>;
 	};
 
-	//pinctrl_usbotg2: usbotg2grp {
-	//	fsl,pins = <
-	//		MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x16
-	//	>;
-	//};
-
-	//pinctrl_usbotg2_sleep: usbotg2grpsleep {
-	//	fsl,pins = <
-	//		MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1			0x120
-	//	>;
-	//};
-
-
-	
 	pinctrl_extcon: extcongrp {
 		fsl,pins = <
 			MX8MM_IOMUXC_GPIO1_IO11_GPIO1_IO11		0x16
@@ -110,11 +96,10 @@
 	status = "okay";
 };
 
-//&usbotg2 {
-//	dr_mode = "host";
-//	vbus-supply = <&reg_usb_otg2_vbus>;
-//	picophy,pre-emp-curr-control = <3>;
-//	picophy,dc-vol-level-adjust = <7>;
-//	disable-over-current;
-//	status = "okay";
-//};
+&usbotg2 {
+	dr_mode = "host";
+	picophy,pre-emp-curr-control = <3>;
+	picophy,dc-vol-level-adjust = <7>;
+	disable-over-current;
+	status = "okay";
+};
