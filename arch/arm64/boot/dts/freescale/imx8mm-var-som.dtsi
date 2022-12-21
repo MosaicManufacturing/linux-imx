@@ -18,13 +18,13 @@
 		clock-output-names = "can_osc";
 	};
 
-	reg_audio: audio_vdd {
-		compatible = "regulator-fixed";
-		regulator-name = "wm8904_supply";
-		regulator-min-microvolt = <3300000>;
-		regulator-max-microvolt = <3300000>;
-		regulator-always-on;
-	};
+	//reg_audio: audio_vdd {
+	//	compatible = "regulator-fixed";
+	//	regulator-name = "wm8904_supply";
+	//	regulator-min-microvolt = <3300000>;
+	//	regulator-max-microvolt = <3300000>;
+	//	regulator-always-on;
+	//};
 
 	reg_eth_phy: regulator-eth-phy {
 		compatible = "regulator-fixed";
@@ -42,30 +42,30 @@
 		/delete-node/ linux,cma;
 	};
 
-	sound-spdif {
-		compatible = "fsl,imx-audio-spdif";
-		model = "imx-spdif";
-		spdif-controller = <&spdif1>;
-		spdif-out;
-		spdif-in;
-		status = "disabled";
-	};
+	//sound-spdif {
+	//	compatible = "fsl,imx-audio-spdif";
+	//	model = "imx-spdif";
+	//	spdif-controller = <&spdif1>;
+	//	spdif-out;
+	//	spdif-in;
+	//	status = "disabled";
+	//};
 
-	sound-wm8904 {
-		compatible = "fsl,imx-audio-wm8904";
-		model = "imx-wm8904";
-		audio-cpu = <&sai5>;
-		audio-codec = <&wm8904>;
-		audio-routing =
-			"Headphone Jack", "HPOUTL",
-			"Headphone Jack", "HPOUTR",
-			"IN2L", "Line In Jack",
-			"IN2R", "Line In Jack",
-			"IN1L", "Mic Jack",
-			"Playback", "CPU-Playback",
-			"CPU-Capture", "Capture";
-		status = "okay";
-	};
+	//sound-wm8904 {
+	//	compatible = "fsl,imx-audio-wm8904";
+	//	model = "imx-wm8904";
+	//	audio-cpu = <&sai5>;
+	//	audio-codec = <&wm8904>;
+	//	audio-routing =
+	//		"Headphone Jack", "HPOUTL",
+	//		"Headphone Jack", "HPOUTR",
+	//		"IN2L", "Line In Jack",
+	//		"IN2R", "Line In Jack",
+	//		"IN1L", "Mic Jack",
+	//		"Playback", "CPU-Playback",
+	//		"CPU-Capture", "Capture";
+	//	status = "okay";
+	//};
 };
 
 &A53_0 {
@@ -234,12 +234,12 @@
 		>;
 	};
 
-	pinctrl_i2c3: i2c3grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_I2C3_SCL_I2C3_SCL			0x400001c3
-			MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
-		>;
-	};
+	//pinctrl_i2c3: i2c3grp {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_I2C3_SCL_I2C3_SCL			0x400001c3
+	//		MX8MM_IOMUXC_I2C3_SDA_I2C3_SDA			0x400001c3
+	//	>;
+	//};
 
 	pinctrl_i2c1_gpio: i2c1grp-gpio {
 		fsl,pins = <
@@ -248,12 +248,12 @@
 		>;
 	};
 
-	pinctrl_i2c3_gpio: i2c3grp-gpio {
-		fsl,pins = <
-			MX8MM_IOMUXC_I2C3_SCL_GPIO5_IO18		0x1c3
-			MX8MM_IOMUXC_I2C3_SDA_GPIO5_IO19		0x1c3
-		>;
-	};
+	//pinctrl_i2c3_gpio: i2c3grp-gpio {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_I2C3_SCL_GPIO5_IO18		0x1c3
+	//		MX8MM_IOMUXC_I2C3_SDA_GPIO5_IO19		0x1c3
+	//	>;
+	//};
 
 	pinctrl_lvds: lvdsgrp {
 		fsl,pins = <
@@ -279,24 +279,24 @@
 		>;
 	};
 
-	pinctrl_sai5: sai5grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI5_RXD1_SAI5_TX_SYNC		0xd6
-			MX8MM_IOMUXC_SAI5_RXFS_SAI5_RX_SYNC		0xd6
-			MX8MM_IOMUXC_SAI5_RXD3_SAI5_TX_DATA0		0xd6
-			MX8MM_IOMUXC_SAI5_RXD0_SAI5_RX_DATA0		0xd6
-			MX8MM_IOMUXC_SAI5_RXC_SAI5_RX_BCLK		0xd6
-			MX8MM_IOMUXC_SAI5_RXD2_SAI5_TX_BCLK		0xd6
-			MX8MM_IOMUXC_SAI5_MCLK_SAI5_MCLK		0xd6
-		>;
-	};
+	//pinctrl_sai5: sai5grp {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_SAI5_RXD1_SAI5_TX_SYNC		0xd6
+	//		MX8MM_IOMUXC_SAI5_RXFS_SAI5_RX_SYNC		0xd6
+	//		MX8MM_IOMUXC_SAI5_RXD3_SAI5_TX_DATA0		0xd6
+	//		MX8MM_IOMUXC_SAI5_RXD0_SAI5_RX_DATA0		0xd6
+	//		MX8MM_IOMUXC_SAI5_RXC_SAI5_RX_BCLK		0xd6
+	//		MX8MM_IOMUXC_SAI5_RXD2_SAI5_TX_BCLK		0xd6
+	//		MX8MM_IOMUXC_SAI5_MCLK_SAI5_MCLK		0xd6
+	//	>;
+	//};
 
-	pinctrl_spdif1: spdif1grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SPDIF_TX_SPDIF1_OUT		0xd6
-			MX8MM_IOMUXC_SPDIF_RX_SPDIF1_IN			0xd6
-		>;
-	};
+	//pinctrl_spdif1: spdif1grp {
+	//	fsl,pins = <
+	//		MX8MM_IOMUXC_SPDIF_TX_SPDIF1_OUT		0xd6
+	//		MX8MM_IOMUXC_SPDIF_RX_SPDIF1_IN			0xd6
+	//	>;
+	//};
 
 	pinctrl_uart2: uart2grp {
 		fsl,pins = <
@@ -549,12 +549,12 @@
 				regulator-always-on;
 			};
 
-			ldo5_reg: LDO5 {
-				regulator-name = "LDO5";
-				regulator-min-microvolt = <1800000>;
-				regulator-max-microvolt = <1800000>;
-				regulator-always-on;
-			};
+			//ldo5_reg: LDO5 {
+			//	regulator-name = "LDO5";
+			//	regulator-min-microvolt = <1800000>;
+			//	regulator-max-microvolt = <1800000>;
+			//	regulator-always-on;
+			//};
 
 			ldo6_reg: LDO6 {
 				regulator-name = "LDO6";
@@ -567,77 +567,77 @@
 	};
 };
 
-&i2c3 {
-	clock-frequency = <100000>;
-	pinctrl-names = "default", "gpio";
-	pinctrl-0 = <&pinctrl_i2c3>;
-	pinctrl-1 = <&pinctrl_i2c3_gpio>;
-	scl-gpios = <&gpio5 18 GPIO_ACTIVE_HIGH>;
-	sda-gpios = <&gpio5 19 GPIO_ACTIVE_HIGH>;
-	status = "okay";
-
-	wm8904: audio-codec@1a {
-		status = "okay";
-		compatible = "wlf,wm8904";
-		reg = <0x1a>;
-		clocks = <&clk IMX8MM_CLK_SAI5_ROOT>;
-		clock-names = "mclk";
-		DBVDD-supply = <&reg_audio>;
-		DCVDD-supply = <&ldo5_reg>;
-		AVDD-supply = <&ldo5_reg>;
-		CPVDD-supply = <&ldo5_reg>;
-		MICVDD-supply = <&ldo5_reg>;
-		num-drc-cfgs = <5>;
-		drc-cfg-names = "default", "peaklimiter", "tradition", "soft", "music";
-		drc-cfg-regs =
-				/* coded default: KNEE_IP = KNEE_OP = 0, HI_COMP = LO_COMP = 1  */
-				<0x01af 0x3248 0x0000 0x0000>,
-				/* coded default: KNEE_IP = -24, KNEE_OP = -6, HI_COMP = 1/4, LO_COMP = 1 */
-				<0x04af 0x324b 0x0010 0x0408>,
-				/* coded default: KNEE_IP = -42, KNEE_OP = -3, HI_COMP = 0, LO_COMP = 1 */
-				<0x04af 0x324b 0x0028 0x0704>,
-				/* coded default: KNEE_IP = -45, KNEE_OP = -9, HI_COMP = 1/8, LO_COMP = 1 */
-				<0x04af 0x324b 0x0018 0x078c>,
-				/* coded default: KNEE_IP = -30, KNEE_OP = -10.5, HI_COMP = 1/4, LO_COMP = 1 */
-				<0x04af 0x324b 0x0010 0x050e>;
-		gpio-cfg = <
-			0x0018 /* GPIO1 => DMIC_CLK */
-			0xffff /* GPIO2 => don't touch */
-			0xffff /* GPIO3 => don't touch */
-			0xffff /* GPIO4 => don't touch */
-		>;
-	};
-};
+//&i2c3 {
+//	clock-frequency = <100000>;
+//	pinctrl-names = "default", "gpio";
+//	pinctrl-0 = <&pinctrl_i2c3>;
+//	pinctrl-1 = <&pinctrl_i2c3_gpio>;
+//	scl-gpios = <&gpio5 18 GPIO_ACTIVE_HIGH>;
+//	sda-gpios = <&gpio5 19 GPIO_ACTIVE_HIGH>;
+//	status = "okay";
+//
+//	wm8904: audio-codec@1a {
+//		status = "okay";
+//		compatible = "wlf,wm8904";
+//		reg = <0x1a>;
+//		clocks = <&clk IMX8MM_CLK_SAI5_ROOT>;
+//		clock-names = "mclk";
+//		DBVDD-supply = <&reg_audio>;
+//		DCVDD-supply = <&ldo5_reg>;
+//		AVDD-supply = <&ldo5_reg>;
+//		CPVDD-supply = <&ldo5_reg>;
+//		MICVDD-supply = <&ldo5_reg>;
+//		num-drc-cfgs = <5>;
+//		drc-cfg-names = "default", "peaklimiter", "tradition", "soft", "music";
+//		drc-cfg-regs =
+//				/* coded default: KNEE_IP = KNEE_OP = 0, HI_COMP = LO_COMP = 1  */
+//				<0x01af 0x3248 0x0000 0x0000>,
+//				/* coded default: KNEE_IP = -24, KNEE_OP = -6, HI_COMP = 1/4, LO_COMP = 1 */
+//				<0x04af 0x324b 0x0010 0x0408>,
+//				/* coded default: KNEE_IP = -42, KNEE_OP = -3, HI_COMP = 0, LO_COMP = 1 */
+//				<0x04af 0x324b 0x0028 0x0704>,
+//				/* coded default: KNEE_IP = -45, KNEE_OP = -9, HI_COMP = 1/8, LO_COMP = 1 */
+//				<0x04af 0x324b 0x0018 0x078c>,
+//				/* coded default: KNEE_IP = -30, KNEE_OP = -10.5, HI_COMP = 1/4, LO_COMP = 1 */
+//				<0x04af 0x324b 0x0010 0x050e>;
+//		gpio-cfg = <
+//			0x0018 /* GPIO1 => DMIC_CLK */
+//			0xffff /* GPIO2 => don't touch */
+//			0xffff /* GPIO3 => don't touch */
+//			0xffff /* GPIO4 => don't touch */
+//		>;
+//	};
+//};
 
 &mu {
 	status = "okay";
 };
 
-&sai5 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_sai5>;
-	assigned-clocks = <&clk IMX8MM_CLK_SAI5>;
-	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
-	assigned-clock-rates = <1536000>;
-	status = "okay";
-};
+//&sai5 {
+//	pinctrl-names = "default";
+//	pinctrl-0 = <&pinctrl_sai5>;
+//	assigned-clocks = <&clk IMX8MM_CLK_SAI5>;
+//	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
+//	assigned-clock-rates = <1536000>;
+//	status = "okay";
+//};
 
-&spdif1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_spdif1>;
-	assigned-clocks = <&clk IMX8MM_CLK_SPDIF1>;
-	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
-	assigned-clock-rates = <24576000>;
-	clocks = <&clk IMX8MM_CLK_AUDIO_AHB>, <&clk IMX8MM_CLK_24M>,
-		<&clk IMX8MM_CLK_SPDIF1>, <&clk IMX8MM_CLK_DUMMY>,
-		<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>,
-		<&clk IMX8MM_CLK_AUDIO_AHB>, <&clk IMX8MM_CLK_DUMMY>,
-		<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>,
-		<&clk IMX8MM_AUDIO_PLL1_OUT>, <&clk IMX8MM_AUDIO_PLL2_OUT>;
-	clock-names = "core", "rxtx0", "rxtx1", "rxtx2", "rxtx3",
-		"rxtx4", "rxtx5", "rxtx6", "rxtx7", "spba", "pll8k", "pll11k";
-	status = "disabled";
-};
+//&spdif1 {
+//	pinctrl-names = "default";
+//	pinctrl-0 = <&pinctrl_spdif1>;
+//	assigned-clocks = <&clk IMX8MM_CLK_SPDIF1>;
+//	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
+//	assigned-clock-rates = <24576000>;
+//	clocks = <&clk IMX8MM_CLK_AUDIO_AHB>, <&clk IMX8MM_CLK_24M>,
+//		<&clk IMX8MM_CLK_SPDIF1>, <&clk IMX8MM_CLK_DUMMY>,
+//		<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>,
+//		<&clk IMX8MM_CLK_AUDIO_AHB>, <&clk IMX8MM_CLK_DUMMY>,
+//		<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>,
+//		<&clk IMX8MM_AUDIO_PLL1_OUT>, <&clk IMX8MM_AUDIO_PLL2_OUT>;
+//	clock-names = "core", "rxtx0", "rxtx1", "rxtx2", "rxtx3",
+//		"rxtx4", "rxtx5", "rxtx6", "rxtx7", "spba", "pll8k", "pll11k";
+//	status = "disabled";
+//};
 
 /* Bluetooth */
 &uart2 {
