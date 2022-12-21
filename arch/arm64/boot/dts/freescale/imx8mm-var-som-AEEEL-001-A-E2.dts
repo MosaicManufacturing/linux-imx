@@ -30,8 +30,8 @@
 &iomuxc {
 	pinctrl_uart1: uart1grp {
 		fsl,pins = <
-			MX8MM_IOMUXC_UART1_RXD_UART1_DCE_RX		0x140
-			MX8MM_IOMUXC_UART1_TXD_UART1_DCE_TX		0x140
+			MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX    0x140
+			MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX   0x140
 		>;
 	};
 
@@ -68,6 +68,8 @@
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart1>;
+	//assigned-clocks = <&clk IMX8MM_CLK_UART1>;
+	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
@@ -75,6 +77,8 @@
 &uart3 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart3>;
+	//assigned-clocks = <&clk IMX8MM_CLK_UART3>;
+	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
@@ -82,6 +86,8 @@
 &uart4 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart4>;
+	//assigned-clocks = <&clk IMX8MM_CLK_UART4>;
+	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
