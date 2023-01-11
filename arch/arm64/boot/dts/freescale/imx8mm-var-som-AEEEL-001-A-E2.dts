@@ -14,9 +14,11 @@
 	model = "Variscite VAR-SOM-MX8M-MINI on Symphony-Board 1.4a and above";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 
+  /*
 	chosen {
 		stdout-path = &uart4;
 	};
+  */
 
 	extcon_usb1: extcon_usb1 {
 		compatible = "linux,extcon-usb-gpio";
