@@ -30,6 +30,8 @@
 
   /* lvds to hdmi */
   lvdshdmi: lvdshdmi {
+	  pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_lvds_to_hdmi>;
     reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
     status = "okay";
   };
@@ -63,12 +65,11 @@
 		>;
 	};
 
-/*
 	pinctrl_lvds_to_hdmi: lvdshdmigrp {
     fsl,pins = <
       MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10     0x140
     >
-    */
+  };
 };
 
 &snvs_pwrkey {
