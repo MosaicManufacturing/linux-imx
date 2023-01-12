@@ -27,6 +27,12 @@
 		id-gpio = <&gpio1 11 GPIO_ACTIVE_HIGH>;
 		status = "okay";
 	};
+
+  /* lvds to hdmi */
+  lvdshdmi: lvdshdmi {
+    reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
+    status = "okay";
+  };
 };
 
 &iomuxc {
@@ -116,11 +122,5 @@
 	picophy,pre-emp-curr-control = <3>;
 	picophy,dc-vol-level-adjust = <7>;
 	disable-over-current;
-	status = "okay";
-};
-
-/* lvds to hdmi */
-lvdshdmi: lvdshdmi {
-	reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
 	status = "okay";
 };
