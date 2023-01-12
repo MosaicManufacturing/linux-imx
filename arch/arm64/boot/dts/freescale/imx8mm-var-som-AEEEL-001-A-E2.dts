@@ -56,6 +56,13 @@
 			MX8MM_IOMUXC_GPIO1_IO11_GPIO1_IO11		0x16
 		>;
 	};
+
+/*
+	pinctrl_lvds_to_hdmi: lvdshdmigrp {
+    fsl,pins = <
+      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10     0x140
+    >
+    */
 };
 
 &snvs_pwrkey {
@@ -111,3 +118,8 @@
 	disable-over-current;
 	status = "okay";
 };
+
+/* lvds to hdmi */
+&lvdshdmi {
+	reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
+}
