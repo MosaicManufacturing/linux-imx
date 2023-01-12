@@ -32,7 +32,7 @@
   lvdshdmi: lvdshdmi {
 	  pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_lvds_to_hdmi>;
-    reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
+    reset-gpio = <&gpio4 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     status = "okay";
   };
 };
