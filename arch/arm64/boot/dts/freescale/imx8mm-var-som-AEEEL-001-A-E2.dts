@@ -122,4 +122,4 @@
 /* lvds to hdmi */
 &lvdshdmi {
 	reset-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
-}
+};
