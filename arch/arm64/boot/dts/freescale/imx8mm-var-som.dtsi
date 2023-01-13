@@ -331,7 +331,8 @@
 
 		display-timings {
       native-mode = <&lvds800x640>;
-			lvds1920x1080 {
+
+			lvds1920x1080: 1920x1080p60 {
 				clock-frequency = <148500000>;
 				hactive = <1920>;
 				vactive = <1080>;
@@ -347,7 +348,7 @@
 				pixelclk-active = <0>;
 			};
 
-      lvds1280x800 {
+      lvds1280x800: 1280x800p60 {
 				clock-frequency = <83500000>;
 				hactive = <1280>;
 				vactive = <800>;
@@ -363,7 +364,7 @@
 				pixelclk-active = <0>;
 			};
 
-      lvds800x640 {
+      lvds800x640: 800x640p60 {
 				clock-frequency = <26136000>;
 				hactive = <800>;
 				vactive = <480>;
