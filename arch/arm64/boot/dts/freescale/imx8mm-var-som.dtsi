@@ -330,7 +330,7 @@
 		status = "okay";
 
 		display-timings {
-      native-mode = <&lvds800x640>;
+      native-mode = <&lvds800x480>;
 
       lvds800x480: 800x480p60 {
 				clock-frequency = <33000000>;
