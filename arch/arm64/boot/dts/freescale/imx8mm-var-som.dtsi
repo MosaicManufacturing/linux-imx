@@ -330,7 +330,8 @@
 		status = "okay";
 
 		display-timings {
-			lvds {
+      native-mode = <&lvds800x640>;
+			lvds1920x1080 {
 				clock-frequency = <148500000>;
 				hactive = <1920>;
 				vactive = <1080>;
@@ -340,6 +341,38 @@
 				vfront-porch = <4>;
 				hsync-len = <44>;
 				vsync-len = <5>;
+				hsync-active = <0>;
+				vsync-active = <0>;
+				de-active = <1>;
+				pixelclk-active = <0>;
+			};
+
+      lvds1280x800 {
+				clock-frequency = <83500000>;
+				hactive = <1280>;
+				vactive = <800>;
+				hback-porch = <200>;
+				hfront-porch = <72>;
+				vback-porch = <22>;
+				vfront-porch = <3>;
+				hsync-len = <128>;
+				vsync-len = <6>;
+				hsync-active = <0>;
+				vsync-active = <0>;
+				de-active = <1>;
+				pixelclk-active = <0>;
+			};
+
+      lvds800x640 {
+				clock-frequency = <26136000>;
+				hactive = <800>;
+				vactive = <480>;
+				hback-porch = <40>;
+				hfront-porch = <8>;
+				vback-porch = <6>;
+				vfront-porch = <1>;
+				hsync-len = <32>;
+				vsync-len = <8>;
 				hsync-active = <0>;
 				vsync-active = <0>;
 				de-active = <1>;
