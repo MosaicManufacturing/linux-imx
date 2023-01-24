@@ -129,12 +129,12 @@
 &dsi_lvds_bridge {
   display-timings {
     lvds1280x800: 1280x800p60 {
-			clock-frequency = <67728000>;
+			clock-frequency = <71400000>;
 			hactive = <1280>;
 			vactive = <800>;
-			hback-porch = <40>;
+			hback-porch = <80>;
 			hfront-porch = <8>;
-			vback-porch = <10>;
+			vback-porch = <30>;
 			vfront-porch = <12>;
 			hsync-len = <32>;
 			vsync-len = <8>;
