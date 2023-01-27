@@ -61,7 +61,7 @@
 		ti,settle-delay-usec = /bits/ 16 <150>;
 		ti,keep-vref-on;
 		wakeup-source;
-		status = "okay";
+		status = "disabled";
 	};
 
 	/* Test SPI device */
@@ -328,24 +328,6 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_lvds>;
 		status = "okay";
-
-		display-timings {
-			lvds {
-				clock-frequency = <148500000>;
-				hactive = <1920>;
-				vactive = <1080>;
-				hback-porch = <148>;
-				hfront-porch = <88>;
-				vback-porch = <36>;
-				vfront-porch = <4>;
-				hsync-len = <44>;
-				vsync-len = <5>;
-				hsync-active = <0>;
-				vsync-active = <0>;
-				de-active = <1>;
-				pixelclk-active = <0>;
-			};
-		};
 
 		port {
 			dsi_lvds_bridge_in: endpoint {
