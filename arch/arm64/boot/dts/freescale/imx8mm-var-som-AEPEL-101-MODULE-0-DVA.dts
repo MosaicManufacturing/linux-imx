@@ -27,14 +27,15 @@
 		id-gpio = <&gpio1 11 GPIO_ACTIVE_HIGH>;
 		status = "okay";
 	};
+};
 
-  /* lvds to hdmi */
-  lvdshdmi: lvdshdmi {
-	  pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_lvds_to_hdmi>;
-    reset-gpio = <&gpio4 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    status = "okay";
-  };
+&gpio5 {
+    front_door_sensor_hog: front_door_sensor_hog {
+        gpio-hog;
+		gpios = <8 GPIO_ACTIVE_HIGH>;
+		input;
+		line-name = "front_door_sensor";
+    };
 };
 
 &iomuxc {
