@@ -32,7 +32,7 @@
     lvdshdmi: lvdshdmi {
 	    pinctrl-names = "default";
 	    pinctrl-0 = <&pinctrl_lvds_to_hdmi>;
-        enable-gpios = <&gpio4 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        enable-gpios = <&gpio4 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         status = "okay";
     };
 };
@@ -133,13 +133,13 @@
       hactive = <480>;
       vactive = <800>;
 
-      hfront-porch = <32>;
+      hfront-porch = <24>;
       hsync-len = <48>;
-      hback-porch = <64>;
+      hback-porch = <40>;
 
-      vfront-porch = <30>;
+      vfront-porch = <9>;
       vsync-len = <8>;
-      vback-porch = <30>;
+      vback-porch = <6>;
 
       hsync-active = <0>;
       vsync-active = <0>;
