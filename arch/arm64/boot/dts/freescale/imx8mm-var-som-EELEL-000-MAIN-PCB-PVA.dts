@@ -66,10 +66,22 @@
 	};
 
 	pinctrl_lvds_to_hdmi: lvdshdmigrp {
-    fsl,pins = <
-      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10     0x140
-    >;
-  };
+        fsl,pins = <
+          MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10     0x140
+        >;
+    };
+
+    pinctrl_master_mcu_reset: mastermcuresetgrp {
+        fsl,pins = <
+          MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1       0x0
+        >;
+    };
+
+    pinctrl_slave_mcu_reset: slavemcuresetgrp {
+        fsl,pins = <
+          MX8MM_IOMUXC_SAI2_TXD0_GPIO4_IO26     0x0
+        >;
+    };
 };
 
 &snvs_pwrkey {
