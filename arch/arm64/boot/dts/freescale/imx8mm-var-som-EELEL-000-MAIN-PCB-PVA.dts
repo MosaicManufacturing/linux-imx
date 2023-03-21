@@ -2,7 +2,7 @@
 /*
  * Copyright 2019 NXP
  * Copyright 2019-2022 Variscite Ltd.
- * Copyright 2022 Mosaic Manufacturing Ltd.
+ * Copyright 2022-2023 Mosaic Manufacturing Ltd.
  */
 
 /dts-v1/;
@@ -11,21 +11,15 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-	model = "Variscite VAR-SOM-MX8M-MINI on Symphony-Board 1.4a and above";
+	model = "Variscite VAR-SOM-MX8M-MINI on EELEL-000-MAIN-PCB-PVA and above";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
-
-  /*
-	chosen {
-		stdout-path = &uart4;
-	};
-  */
 };
 
 &iomuxc {
 	pinctrl_uart1: uart1grp {
 		fsl,pins = <
-			MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX    0x140
-			MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX   0x140
+			MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX      0x140
+			MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX     0x140
 		>;
 	};
 
@@ -38,8 +32,8 @@
 
 	pinctrl_uart4: uart4grp {
 		fsl,pins = <
-      MX8MM_IOMUXC_ECSPI2_SCLK_UART4_DCE_RX 0x140
-      MX8MM_IOMUXC_ECSPI2_MOSI_UART4_DCE_TX 0x140
+            MX8MM_IOMUXC_ECSPI2_SCLK_UART4_DCE_RX   0x140
+            MX8MM_IOMUXC_ECSPI2_MOSI_UART4_DCE_TX   0x140
 		>;
 	};
 
@@ -73,30 +67,21 @@
 	status = "disabled";
 };
 
-/* Header */
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart1>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART1>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
-/* Header */
 &uart3 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart3>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART3>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
-/* Console */
 &uart4 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart4>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART4>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
@@ -119,21 +104,21 @@
 };
 
 &dsi_lvds_bridge {
-  display-timings {
-   	lvds800x480: 800x480p60 {
-      clock-frequency = <33000000>;
-      hactive = <800>;
-      vactive = <480>;
-      hback-porch = <40>;
-      hfront-porch = <40>;
-      vback-porch = <29>;
-      vfront-porch = <13>;
-      hsync-len = <48>;
-      vsync-len = <3>;
-      hsync-active = <0>;
-      vsync-active = <0>;
-      de-active = <1>;
-      pixelclk-active = <0>;
-		}; 
-  };
+    display-timings {
+   	    lvds800x480: 800x480p60 {
+            clock-frequency = <33000000>;
+            hactive = <800>;
+            vactive = <480>;
+            hback-porch = <40>;
+            hfront-porch = <40>;
+            vback-porch = <29>;
+            vfront-porch = <13>;
+            hsync-len = <48>;
+            vsync-len = <3>;
+            hsync-active = <0>;
+            vsync-active = <0>;
+            de-active = <1>;
+            pixelclk-active = <0>;
+        }; 
+    };
 };
