@@ -124,18 +124,6 @@
         status = "disabled";
 	};
 
-    pinctrl_sensor1: sensor1grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8		0x0
-		>;
-	};
-
-    pinctrl_sensor2: sensor2grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25		0x0
-		>;
-	};
-
 	pinctrl_fec1: fec1grp {
 		fsl,pins = <
 			MX8MM_IOMUXC_ENET_MDC_ENET1_MDC			0x3
