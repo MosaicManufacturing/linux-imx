@@ -13,8 +13,6 @@
 / {
 	model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-DVA and above";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
-
-
 };
 
 &iomuxc {
@@ -67,30 +65,21 @@
 	status = "disabled";
 };
 
-/* Header */
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart1>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART1>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
-/* Header */
 &uart3 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart3>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART3>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
-/* Console */
 &uart4 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart4>;
-	//assigned-clocks = <&clk IMX8MM_CLK_UART4>;
-	//assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_80M>;
 	status = "okay";
 };
 
