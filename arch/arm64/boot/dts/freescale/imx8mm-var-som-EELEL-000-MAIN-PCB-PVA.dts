@@ -69,7 +69,6 @@
 			MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25		0x0
 		>;
 	};
-
 };
 
 &snvs_pwrkey {
