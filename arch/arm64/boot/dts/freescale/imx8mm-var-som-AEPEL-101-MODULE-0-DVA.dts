@@ -2,7 +2,7 @@
 /*
  * Copyright 2019 NXP
  * Copyright 2019-2022 Variscite Ltd.
- * Copyright 2022 Mosaic Manufacturing Ltd.
+ * Copyright 2022-2023 Mosaic Manufacturing Ltd.
  */
 
 /dts-v1/;
@@ -11,30 +11,10 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-	model = "Variscite VAR-SOM-MX8M-MINI on Symphony-Board 1.4a and above";
+	model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-DVA and above";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 
-  /*
-	chosen {
-		stdout-path = &uart4;
-	};
-  */
 
-	extcon_usb1: extcon_usb1 {
-		compatible = "linux,extcon-usb-gpio";
-		pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_extcon>;
-		id-gpio = <&gpio1 11 GPIO_ACTIVE_HIGH>;
-		status = "okay";
-	};
-
-  /* lvds to hdmi */
-  lvdshdmi: lvdshdmi {
-	  pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_lvds_to_hdmi>;
-    reset-gpio = <&gpio4 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    status = "okay";
-  };
 };
 
 &iomuxc {
@@ -59,17 +39,24 @@
 		>;
 	};
 
-	pinctrl_extcon: extcongrp {
+    pinctrl_lvds_to_hdmi: lvdshdmigrp {
+        fsl,pins = <
+            MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10       0x0
+            MX8MM_IOMUXC_GPIO1_IO15_GPIO1_IO15      0x0
+        >;
+    };
+
+    pinctrl_generic_gpio: generic_gpio_grp {
 		fsl,pins = <
-			MX8MM_IOMUXC_GPIO1_IO11_GPIO1_IO11		0x16
+			MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8		0x0
 		>;
 	};
 
-	pinctrl_lvds_to_hdmi: lvdshdmigrp {
-    fsl,pins = <
-      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10     0x140
-    >;
-  };
+    pinctrl_power_button: power_buttongrp {
+		fsl,pins = <
+			MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25		0x0
+		>;
+	};
 };
 
 &snvs_pwrkey {
@@ -114,7 +101,6 @@
 	hnp-disable;
 	srp-disable;
 	adp-disable;
-	extcon = <0>, <&extcon_usb1>;
 	status = "okay";
 };
 
