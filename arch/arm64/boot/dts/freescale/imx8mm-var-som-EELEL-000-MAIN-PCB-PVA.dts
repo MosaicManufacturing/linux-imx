@@ -69,6 +69,13 @@
 			MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25		0x0
 		>;
 	};
+
+    pinctrl_mp: mpgrp {
+		fsl,pins = <
+			MX8MM_IOMUXC_SAI2_TXFS_GPIO4_IO24		0x0
+		>;
+	};
+
 };
 
 &snvs_pwrkey {
