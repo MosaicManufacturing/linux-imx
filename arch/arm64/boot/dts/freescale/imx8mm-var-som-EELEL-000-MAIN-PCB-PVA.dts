@@ -13,57 +13,7 @@
 / {
 	model = "Variscite VAR-SOM-MX8M-MINI on EELEL-000-MAIN-PCB-PVA and above";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
-
-    //lvdshdmi: lvdshdmi {
-	//    pinctrl-names = "default";
-	//	pinctrl-0 = <&pinctrl_lvds_hdmi>;
-    //    enable-gpio = <&gpio4 10 GPIO_ACTIVE_HIGH>;
-    //    input;
-    //    status = "okay";
-    //};
-
-    //mastermcu: mastermcu {
-	//    pinctrl-names = "default";
-	//	pinctrl-0 = <&pinctrl_master_mcu>;
-    //    enable-gpios = <&gpio5 1 GPIO_ACTIVE_LOW>;
-    //    input;
-    //    status = "okay";
-    //};
-
-    //slavemcu: slavemcu {
-	//    pinctrl-names = "default";
-	//	pinctrl-0 = <&pinctrl_slave_mcu>;
-    //    enable-gpios = <&gpio4 26 GPIO_ACTIVE_LOW>;
-    //    input;
-    //    status = "okay";
-    //};
 };
-
-/*
-&gpio5 {
-	master_mcu_reset_hog {
-		gpio-hog;
-	    pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_master_mcu>;
-		gpios = <1 GPIO_ACTIVE_LOW>;
-		output-low;
-		line-name = "master_mcu_reset";
-	};
-};
-
-&gpio3 {
-	power_button_hog {
-		gpio-hog;
-	    pinctrl-names = "default";
-		pinctrl-0 = <&pinctrl_power_button>;
-		gpios = <25 GPIO_ACTIVE_LOW>;
-		input;
-		line-name = "power_button";
-	};
-};
-*/
-
-
 
 &iomuxc {
     pinctrl-names = "default";
