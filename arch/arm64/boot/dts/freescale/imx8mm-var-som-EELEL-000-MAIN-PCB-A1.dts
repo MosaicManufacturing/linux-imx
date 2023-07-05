@@ -11,7 +11,7 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-	model = "Variscite VAR-SOM-MX8M-MINI on EELEL-000-MAIN-PCB-PVA and above";
+	model = "Variscite VAR-SOM-MX8M-MINI on EELEL-000-MAIN-PCB-A1";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 };
 
