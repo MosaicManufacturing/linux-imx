@@ -11,108 +11,108 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-	model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-DVA";
-	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
+  model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-DVA";
+  compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 };
 
 &iomuxc {
   pinctrl-names = "default";
   pinctrl-0 = <&pinctrl_hog>;
 
-	pinctrl_uart1: uart1grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX    0x140
-			MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX   0x140
-		>;
-	};
+  pinctrl_uart1: uart1grp {
+    fsl,pins = <
+      MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX      0x140
+      MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX     0x140
+    >;
+  };
 
-	pinctrl_uart3: uart3grp {
-		fsl,pins = <
-			MX8MM_IOMUXC_UART3_RXD_UART3_DCE_RX		0x140
-			MX8MM_IOMUXC_UART3_TXD_UART3_DCE_TX		0x140
-		>;
-	};
+  pinctrl_uart3: uart3grp {
+    fsl,pins = <
+      MX8MM_IOMUXC_UART3_RXD_UART3_DCE_RX     0x140
+      MX8MM_IOMUXC_UART3_TXD_UART3_DCE_TX     0x140
+    >;
+  };
 
-	pinctrl_uart4: uart4grp {
-		fsl,pins = <
-      MX8MM_IOMUXC_ECSPI2_SCLK_UART4_DCE_RX 0x140
-      MX8MM_IOMUXC_ECSPI2_MOSI_UART4_DCE_TX 0x140
-		>;
-	};
+  pinctrl_uart4: uart4grp {
+    fsl,pins = <
+      MX8MM_IOMUXC_ECSPI2_SCLK_UART4_DCE_RX   0x140
+      MX8MM_IOMUXC_ECSPI2_MOSI_UART4_DCE_TX   0x140
+    >;
+  };
 
   pinctrl_hog: hoggrp {
-      fsl,pins = <
-          MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10       0x0
-          MX8MM_IOMUXC_GPIO1_IO15_GPIO1_IO15      0x0
-			    MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8		  0x0
-			    MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25		    0x0
-      >;
+    fsl,pins = <
+      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10       0x0
+      MX8MM_IOMUXC_GPIO1_IO15_GPIO1_IO15      0x0
+      MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8      0x0
+      MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25       0x0
+    >;
   };
 };
 
 &snvs_pwrkey {
-	status = "okay";
+  status = "okay";
 };
 
 &snvs_rtc {
-	status = "disabled";
+  status = "disabled";
 };
 
 &uart1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_uart1>;
-	status = "okay";
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_uart1>;
+  status = "okay";
 };
 
 &uart3 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_uart3>;
-	status = "okay";
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_uart3>;
+  status = "okay";
 };
 
 &uart4 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_uart4>;
-	status = "okay";
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_uart4>;
+  status = "okay";
 };
 
 &usbotg1 {
-	dr_mode = "host";
-	picophy,pre-emp-curr-control = <3>;
-	picophy,dc-vol-level-adjust = <7>;
-	hnp-disable;
-	srp-disable;
-	adp-disable;
-	status = "okay";
+  dr_mode = "host";
+  picophy,pre-emp-curr-control = <3>;
+  picophy,dc-vol-level-adjust = <7>;
+  hnp-disable;
+  srp-disable;
+  adp-disable;
+  status = "okay";
 };
 
 &usbotg2 {
-	dr_mode = "host";
-	picophy,pre-emp-curr-control = <3>;
-	picophy,dc-vol-level-adjust = <7>;
-	disable-over-current;
-	status = "okay";
+  dr_mode = "host";
+  picophy,pre-emp-curr-control = <3>;
+  picophy,dc-vol-level-adjust = <7>;
+  disable-over-current;
+  status = "okay";
 };
 
 &dsi_lvds_bridge {
   display-timings {
     lvds1280x800: 1280x800p60 {
-			clock-frequency = <74250000>;
-			hactive = <1280>;
-			vactive = <800>;
+      clock-frequency = <74250000>;
+      hactive = <1280>;
+      vactive = <800>;
 
-			hfront-porch = <16>;
-			hsync-len = <32>;
-			hback-porch = <40>;
+      hfront-porch = <16>;
+      hsync-len = <32>;
+      hback-porch = <40>;
 
-			vfront-porch = <11>;
-			vsync-len = <8>;
-			vback-porch = <6>;
+      vfront-porch = <11>;
+      vsync-len = <8>;
+      vback-porch = <6>;
 
-			hsync-active = <0>;
-			vsync-active = <0>;
-			de-active = <0>;
-			pixelclk-active = <0>;
-		};
+      hsync-active = <0>;
+      vsync-active = <0>;
+      de-active = <0>;
+      pixelclk-active = <0>;
+    };
   };
 };
