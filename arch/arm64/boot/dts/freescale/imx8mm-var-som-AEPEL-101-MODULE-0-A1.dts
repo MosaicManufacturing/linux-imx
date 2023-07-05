@@ -11,7 +11,7 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-	model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-DVA";
+	model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-A1";
 	compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 };
 
