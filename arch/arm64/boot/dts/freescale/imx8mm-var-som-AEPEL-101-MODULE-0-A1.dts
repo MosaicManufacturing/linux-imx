@@ -11,13 +11,13 @@
 #include "imx8mm-var-som.dtsi"
 
 / {
-  model = "Variscite VAR-SOM-MX8M-MINI on EELEL-000-MAIN-PCB-PVA";
+  model = "Variscite VAR-SOM-MX8M-MINI on AEPEL-101-MODULE-0-A1";
   compatible = "variscite,dart-mx8mm", "fsl,imx8mm";
 };
 
 &iomuxc {
-    pinctrl-names = "default";
-    pinctrl-0 = <&pinctrl_hog>;
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_hog>;
 
   pinctrl_uart1: uart1grp {
     fsl,pins = <
@@ -42,16 +42,10 @@
 
   pinctrl_hog: hoggrp {
     fsl,pins = <
-      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10       0x1c6
-      MX8MM_IOMUXC_GPIO1_IO15_GPIO1_IO15      0x1c6
-      MX8MM_IOMUXC_SAI3_TXD_GPIO5_IO1         0x1c6
-      MX8MM_IOMUXC_GPIO1_IO06_GPIO1_IO6       0x1c6
-      MX8MM_IOMUXC_SAI2_TXD0_GPIO4_IO26       0x1c6
-      MX8MM_IOMUXC_GPIO1_IO07_GPIO1_IO7       0x1c6
-      MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8      0x1c6
-      MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25       0x1c6
-      MX8MM_IOMUXC_SAI2_TXFS_GPIO4_IO24       0x1c6
-      MX8MM_IOMUXC_SD2_CLK_GPIO2_IO13         0x1c6
+      MX8MM_IOMUXC_SAI1_TXFS_GPIO4_IO10       0x0
+      MX8MM_IOMUXC_GPIO1_IO15_GPIO1_IO15      0x0
+      MX8MM_IOMUXC_ECSPI1_MISO_GPIO5_IO8      0x0
+      MX8MM_IOMUXC_SAI5_MCLK_GPIO3_IO25       0x0
     >;
   };
 };
@@ -102,20 +96,23 @@
 
 &dsi_lvds_bridge {
   display-timings {
-       lvds800x480: 800x480p60 {
-      clock-frequency = <33000000>;
-      hactive = <800>;
-      vactive = <480>;
+    lvds1280x800: 1280x800p60 {
+      clock-frequency = <74250000>;
+      hactive = <1280>;
+      vactive = <800>;
+
+      hfront-porch = <16>;
+      hsync-len = <32>;
       hback-porch = <40>;
-      hfront-porch = <40>;
-      vback-porch = <29>;
-      vfront-porch = <13>;
-      hsync-len = <48>;
-      vsync-len = <3>;
+
+      vfront-porch = <11>;
+      vsync-len = <8>;
+      vback-porch = <6>;
+
       hsync-active = <0>;
       vsync-active = <0>;
-      de-active = <1>;
+      de-active = <0>;
       pixelclk-active = <0>;
-    }; 
+    };
   };
 };
