@@ -26,6 +26,12 @@
     >;
   };
 
+  pinctrl_uart2_rs485: uart2rs485 {
+    fsl,pins = <
+      MX8MM_IOMUXC_SAI5_RXD3_GPIO3_IO24       0x016
+    >;
+  };
+
   pinctrl_uart3: uart3grp {
     fsl,pins = <
       MX8MM_IOMUXC_UART3_RXD_UART3_DCE_RX     0x140
@@ -68,6 +74,14 @@
 &uart1 {
   pinctrl-names = "default";
   pinctrl-0 = <&pinctrl_uart1>;
+  status = "okay";
+};
+
+&uart2 {
+  pinctrl-names = "default";
+  pinctrl-0 = <&pinctrl_uart2>, <&pinctrl_uart2_rs485>;
+  rts-gpios = <&gpio3 24 GPIO_ACTIVE_HIGH>;
+  linux,rs485-enabled-at-boot-time;
   status = "okay";
 };
 
