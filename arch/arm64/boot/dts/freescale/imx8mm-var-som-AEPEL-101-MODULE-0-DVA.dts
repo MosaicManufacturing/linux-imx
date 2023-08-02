@@ -116,3 +116,7 @@
     };
   };
 };
+
+&usdhc1 {
+  status = "disabled";
+};
